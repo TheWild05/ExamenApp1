@@ -34,7 +34,7 @@ namespace ExamenApp1
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,6 +64,26 @@ namespace ExamenApp1
 
         private void buttonResumen_Click(object sender, EventArgs e)
         {
+            if ((string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length < 3) && (string.IsNullOrEmpty(txtDni.Text) || txtDni.Text.Length != 13))
+            {
+                MessageBox.Show("El nombre esta vacio o Incorrecto y El Dni esta vacio o Incorrecto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if ((string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length < 3) && (string.IsNullOrEmpty(txtDni.Text) || txtDni.Text.Length != 13) && (string.IsNullOrEmpty(txtTelefono.Text) && (string.IsNullOrEmpty(cmbVehiculo.Text))))
+            {
+                MessageBox.Show("INGRESE LOS DATOS REQUERIDOS", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if ((string.IsNullOrEmpty(txtDni.Text) || txtDni.Text.Length != 13) && (string.IsNullOrEmpty(txtTelefono.Text) && (string.IsNullOrEmpty(cmbVehiculo.Text))))
+            {
+                MessageBox.Show("Hace falta Dni, telefono y seleccion", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if ((string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length < 3) && (string.IsNullOrEmpty(txtDni.Text) || txtDni.Text.Length != 13) && (string.IsNullOrEmpty(txtTelefono.Text) && (string.IsNullOrEmpty(cmbVehiculo.Text))))
+            {
+                MessageBox.Show("INGRESE LOS DATOS REQUERIDOS", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (string.IsNullOrEmpty(txtNombre.Text) || txtNombre.Text.Length < 3)
             {
                 MessageBox.Show("El valor debe tener minimo 3 caracteres", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -79,6 +99,11 @@ namespace ExamenApp1
                 MessageBox.Show("El campo esta vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (cmbVehiculo.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de vehículo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             else
                 MessageBox.Show($"Nombre: {txtNombre.Text}\nDNI: {txtDni.Text}\nTelefono: {txtTelefono.Text}\n Tipo de solicitud: {cmbVehiculo.SelectedItem}", "Resumen", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -88,6 +113,7 @@ namespace ExamenApp1
             txtNombre.Clear();
             txtDni.Clear();
             txtTelefono.Clear();
+            cmbVehiculo.SelectedIndex = -1;
             txtNombre.Focus();
         }
     }

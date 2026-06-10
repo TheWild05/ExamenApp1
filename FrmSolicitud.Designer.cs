@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolicitud));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDni = new System.Windows.Forms.TextBox();
@@ -93,9 +94,12 @@
             // 
             // picVehiculo
             // 
+            this.picVehiculo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picVehiculo.BackgroundImage")));
+            this.picVehiculo.Image = ((System.Drawing.Image)(resources.GetObject("picVehiculo.Image")));
             this.picVehiculo.Location = new System.Drawing.Point(447, 135);
             this.picVehiculo.Name = "picVehiculo";
             this.picVehiculo.Size = new System.Drawing.Size(275, 190);
+            this.picVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picVehiculo.TabIndex = 6;
             this.picVehiculo.TabStop = false;
             this.picVehiculo.Click += new System.EventHandler(this.pictureBox1_Click);
