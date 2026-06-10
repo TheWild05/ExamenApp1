@@ -9,8 +9,11 @@ namespace ExamenApp1
     internal class Program
     {
         static void Main(string[] args)
-        { 
+        {
+            FrmSolicitud solicitud = new FrmSolicitud();
+            solicitud.ShowDialog();
         } 
-        }
+
+        
     }
 }

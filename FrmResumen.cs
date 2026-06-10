@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ExamenApp1
 {
-    public partial class Form1 : Form
+    public partial class FrmResumen : Form
     {
-        public Form1()
+        public FrmResumen()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -27,7 +22,12 @@ namespace ExamenApp1
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmResumen_Load(object sender, EventArgs e)
         {
 
         }
